@@ -10,7 +10,7 @@ class ResponseModel {
   final int? perPage;
   final int? total;
   final int? totalPages;
-  final List<UserModel>? data;
+  final List<UserModel> data;
   final SupportModel? support;
 
   ResponseModel({
@@ -18,7 +18,7 @@ class ResponseModel {
     this.perPage,
     this.total,
     this.totalPages,
-    this.data,
+    required this.data,
     this.support,
   });
 

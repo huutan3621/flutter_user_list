@@ -1,5 +1,5 @@
-import 'package:flutter_user_list/domain/entities/user/user_entity.dart';
+import 'package:flutter_user_list/data/models/response/user/user_model.dart';
 
 abstract class UserRemoteDataSrc {
-  Future<List<UserEntity>> getAllUser();
+  Future<List<UserModel>> getAllUser(int page);
 }

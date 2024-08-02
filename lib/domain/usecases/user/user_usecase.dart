@@ -5,7 +5,7 @@ class UserUsecase {
 
   const UserUsecase(this._userRepository);
 
-  Future getAllUser() {
-    return _userRepository.getAllUser();
+  Future getAllUser(int page) async {
+    return await _userRepository.getAllUser(page);
   }
 }

@@ -164,6 +164,30 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "device_info",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/device_info-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_platform_interface",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-10.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.5.0+1",
       "packageUri": "lib/",
@@ -262,6 +286,12 @@
     {
       "name": "frontend_server_client",
       "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/frontend_server_client-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "get_it",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/get_it-7.7.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -698,6 +728,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "win32_registry",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/win32_registry-1.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "xdg_directories",
       "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.0.4",
       "packageUri": "lib/",
@@ -722,7 +758,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-01T09:10:35.096270Z",
+  "generated": "2024-08-02T06:41:07.268093Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///C:/src/flutter",
