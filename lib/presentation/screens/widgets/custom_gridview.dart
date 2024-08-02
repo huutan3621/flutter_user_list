@@ -218,14 +218,16 @@ class _CustomGridViewState extends State<CustomGridView> {
   }
 
   renderListFooterWidget() {
-    return widget.enableLoadMore
-        ? Container(
-            padding: const EdgeInsets.all(16),
-            child: const Center(
-              child: CircularProgressIndicator(),
-            ),
-          )
-        : Container();
+    if (loadMoreType == LoadMoreType.isLoading) {
+      return Container(
+        padding: const EdgeInsets.all(16),
+        child: const Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } else {
+      return const SizedBox.shrink();
+    }
   }
 
   /// Scroll listener

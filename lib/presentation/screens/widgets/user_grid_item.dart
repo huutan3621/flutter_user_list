@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class UserGridItem extends StatelessWidget {
   final String firstName;
@@ -29,9 +31,13 @@ class UserGridItem extends StatelessWidget {
             width: 100,
             alignment: Alignment.center,
             margin: const EdgeInsets.only(bottom: 4),
-            child: Image.network(
-              imageUrl,
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
               fit: BoxFit.cover,
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  CircularProgressIndicator(value: downloadProgress.progress),
+              errorWidget: (context, url, error) =>
+                  SvgPicture.asset("assets/svgs/ic_user.dart"),
             ),
           ),
           Text(

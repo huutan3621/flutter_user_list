@@ -17,8 +17,7 @@ INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest
 INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml:1:1-45:12
 INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml:1:1-45:12
 MERGED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml:1:1-45:12
-MERGED from [:device_info] D:\Projects\flutter_user_list\build\device_info\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:device_info_plus] D:\Projects\flutter_user_list\build\device_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:connectivity] D:\Projects\flutter_user_list\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:package_info_plus] D:\Projects\flutter_user_list\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] D:\Projects\flutter_user_list\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] D:\Projects\flutter_user_list\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -72,10 +71,8 @@ uses-sdk
 INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\Projects\flutter_user_list\android\app\src\main\AndroidManifest.xml
-MERGED from [:device_info] D:\Projects\flutter_user_list\build\device_info\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:device_info] D:\Projects\flutter_user_list\build\device_info\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:device_info_plus] D:\Projects\flutter_user_list\build\device_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:device_info_plus] D:\Projects\flutter_user_list\build\device_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:connectivity] D:\Projects\flutter_user_list\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:connectivity] D:\Projects\flutter_user_list\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:package_info_plus] D:\Projects\flutter_user_list\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:package_info_plus] D:\Projects\flutter_user_list\build\package_info_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] D:\Projects\flutter_user_list\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -128,6 +125,10 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\Projects\flutter_user_list\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from D:\Projects\flutter_user_list\android\app\src\debug\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:connectivity] D:\Projects\flutter_user_list\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [:connectivity] D:\Projects\flutter_user_list\build\connectivity\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\tanvh\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

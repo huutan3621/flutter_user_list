@@ -81,19 +81,19 @@
     },
     {
       "name": "cached_network_image",
-      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.3.1",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "cached_network_image_platform_interface",
-      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_platform_interface-4.0.0",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_platform_interface-4.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "cached_network_image_web",
-      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_web-1.2.0",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image_web-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -130,6 +130,30 @@
     {
       "name": "color",
       "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/color-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "connectivity",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity-3.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "connectivity_for_web",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_for_web-0.4.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "connectivity_macos",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_macos-0.2.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "connectivity_platform_interface",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_platform_interface-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -399,9 +423,9 @@
     },
     {
       "name": "octo_image",
-      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/octo_image-2.0.0",
+      "rootUri": "file:///C:/Users/tanvh/AppData/Local/Pub/Cache/hosted/pub.dev/octo_image-2.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "package_config",
@@ -728,7 +752,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-02T09:28:44.543771Z",
+  "generated": "2024-08-02T09:59:49.312839Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///C:/src/flutter",

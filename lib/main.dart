@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_user_list/connectivity.dart';
 import 'package:flutter_user_list/data/repositories/user_repository_impl.dart';
 import 'package:flutter_user_list/domain/repositories/user/user_repository.dart';
 import 'package:flutter_user_list/domain/usecases/user/user_usecase.dart';
@@ -11,6 +12,9 @@ part 'injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  ConnectionStatusSingleton connectionStatus =
+      ConnectionStatusSingleton.getInstance();
+  connectionStatus.initialize();
   await dotenv.load(fileName: ".env");
   await init();
   runApp(const MyApp());

@@ -12,9 +12,8 @@ class _HomePageChildState extends State<HomePageChild> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       var homeProvider = Provider.of<HomeProvider>(context, listen: false);
-      homeProvider.init();
+      homeProvider.init(context);
     });
-
     super.initState();
   }
 
