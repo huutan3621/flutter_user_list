@@ -1,18 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_user_list/domain/entities/user/user_entity.dart';
 
 class UserListItem extends StatelessWidget {
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String imageUrl;
-  const UserListItem(
-      {super.key,
-      required this.imageUrl,
-      required this.firstName,
-      required this.lastName,
-      required this.email});
+  final UserEntity user;
+  final Function() onFavoriteToggle;
+
+  const UserListItem({
+    super.key,
+    required this.user,
+    required this.onFavoriteToggle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,33 +30,44 @@ class UserListItem extends StatelessWidget {
             alignment: Alignment.center,
             padding: const EdgeInsets.only(right: 16),
             child: CachedNetworkImage(
-              imageUrl: imageUrl,
+              imageUrl: user.avatar,
               fit: BoxFit.cover,
               progressIndicatorBuilder: (context, url, downloadProgress) =>
                   CircularProgressIndicator(value: downloadProgress.progress),
               errorWidget: (context, url, error) =>
-                  SvgPicture.asset("assets/svgs/ic_user.dart"),
+                  SvgPicture.asset("assets/svgs/ic_user.svg"),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "$firstName $lastName",
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "${user.firstName} ${user.lastName}",
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              ),
-              Text(
-                email,
-                style: const TextStyle(
-                  overflow: TextOverflow.ellipsis,
+                Text(
+                  user.email,
+                  style: const TextStyle(
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              )
-            ],
-          )
+              ],
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.favorite,
+              color: user.isFavorite ? Colors.red : Colors.grey,
+            ),
+            onPressed: () {
+              onFavoriteToggle();
+            },
+          ),
         ],
       ),
     );

@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => HomeProvider(),
-      child: const HomePageChild(),
+      child: const HomeScreenChild(),
     );
   }
 }

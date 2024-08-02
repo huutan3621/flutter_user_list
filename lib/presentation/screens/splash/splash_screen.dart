@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
             CustomButton(
               title: "Tiếp tục",
               onTap: () {
-                Navigator.pushNamed(context, RouteNames.homeScreen);
+                Navigator.pushNamed(context, RouteNames.bottomBar);
               },
             ),
           ],

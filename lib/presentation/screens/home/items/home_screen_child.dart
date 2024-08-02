@@ -1,13 +1,13 @@
 part of '../home_screen.dart';
 
-class HomePageChild extends StatefulWidget {
-  const HomePageChild({super.key});
+class HomeScreenChild extends StatefulWidget {
+  const HomeScreenChild({super.key});
 
   @override
-  State<HomePageChild> createState() => _HomePageChildState();
+  State<HomeScreenChild> createState() => _HomeScreenChildState();
 }
 
-class _HomePageChildState extends State<HomePageChild> {
+class _HomeScreenChildState extends State<HomeScreenChild> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -23,6 +23,7 @@ class _HomePageChildState extends State<HomePageChild> {
       builder: (context, value, child) {
         return Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             title: const Text("HomePage"),
             actions: [
               IconButton(
@@ -60,10 +61,11 @@ class _HomePageChildState extends State<HomePageChild> {
                         itemCount: value.userList.length,
                         itemBuilder: (BuildContext context, int index) {
                           return UserListItem(
-                            imageUrl: value.userList[index].avatar,
-                            firstName: value.userList[index].firstName,
-                            lastName: value.userList[index].lastName,
-                            email: value.userList[index].email,
+                            user: value.userList[index],
+                            onFavoriteToggle: () {
+                              value.toggleFavorite(value.userList[index]);
+                              setState(() {});
+                            },
                           );
                         },
                         enableLoadMore: value.enableLoadMore,
