@@ -33,30 +33,18 @@ class _HomePageChildState extends State<HomePageChild> {
                   icon: Icon(value.isGridView ? Icons.grid_view : Icons.list))
             ],
           ),
-          body: Column(children: [
-            if (child != null) child,
-            value.isGridView
-                ? Expanded(
-                    child: CustomGridView(
-                    itemCount: value.userList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return UserGridItem(
-                        imageUrl: value.userList[index].avatar,
-                        firstName: value.userList[index].firstName,
-                        lastName: value.userList[index].lastName,
-                        email: value.userList[index].email,
-                      );
-                    },
-                    enableLoadMore: value.enableLoadMore,
-                    onLoadMore: () async {
-                      value.onLoadMore();
-                    },
-                  ))
-                : Expanded(
-                    child: ListWidget(
+          body: RefreshIndicator(
+            onRefresh: () async {
+              await value.onRefresh();
+            },
+            child: Column(children: [
+              if (child != null) child,
+              value.isGridView
+                  ? Expanded(
+                      child: CustomGridView(
                       itemCount: value.userList.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return UserListItem(
+                        return UserGridItem(
                           imageUrl: value.userList[index].avatar,
                           firstName: value.userList[index].firstName,
                           lastName: value.userList[index].lastName,
@@ -67,9 +55,26 @@ class _HomePageChildState extends State<HomePageChild> {
                       onLoadMore: () async {
                         value.onLoadMore();
                       },
+                    ))
+                  : Expanded(
+                      child: ListWidget(
+                        itemCount: value.userList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return UserListItem(
+                            imageUrl: value.userList[index].avatar,
+                            firstName: value.userList[index].firstName,
+                            lastName: value.userList[index].lastName,
+                            email: value.userList[index].email,
+                          );
+                        },
+                        enableLoadMore: value.enableLoadMore,
+                        onLoadMore: () async {
+                          value.onLoadMore();
+                        },
+                      ),
                     ),
-                  ),
-          ]),
+            ]),
+          ),
         );
       },
     );

@@ -7,15 +7,28 @@ class RouteNames {
   static const String homeScreen = "homeScreen";
 }
 
-class RouterClass {
+class AppNavigator {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  static BuildContext get context {
+    if (navigatorKey.currentContext == null) {
+      throw Exception('Navigator is not initialized');
+    }
+
+    return navigatorKey.currentContext!;
+  }
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteNames.splashScreen:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return MaterialPageRoute(
+            builder: (navigationKey) => const SplashScreen());
       case RouteNames.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+            builder: (navigationKey) => const HomeScreen());
       default:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return MaterialPageRoute(
+            builder: (navigationKey) => const SplashScreen());
     }
   }
 }

@@ -6,7 +6,6 @@ import 'package:flutter_user_list/domain/usecases/user/user_usecase.dart';
 import 'package:flutter_user_list/router.dart';
 import 'package:flutter_user_list/core/services/dio_services.dart';
 import 'package:get_it/get_it.dart';
-import 'package:get_it/get_it.dart';
 
 part 'injection.dart';
 
@@ -28,8 +27,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      onGenerateRoute: RouterClass.generateRoute,
+      onGenerateRoute: AppNavigator.generateRoute,
       initialRoute: RouteNames.splashScreen,
+      navigatorKey: AppNavigator.navigatorKey,
     );
   }
 }

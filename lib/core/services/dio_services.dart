@@ -2,7 +2,11 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_user_list/core/network/api_exception.dart';
 import 'package:flutter_user_list/core/utils/app_constants.dart';
+import 'package:flutter_user_list/presentation/screens/widgets/alert_dialog.dart';
+import 'package:flutter_user_list/router.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClientService {
@@ -27,6 +31,18 @@ class DioClientService {
       );
   }
 
+  CustomCupertinoAlertDialog alertDialog = CustomCupertinoAlertDialog();
+
+  void checkException(DioException error) {
+    ApiException exception = ApiException();
+    List<String> errorMessage = exception.getExceoptionMessage(error);
+
+    alertDialog.showAlert(
+        context: AppNavigator.context,
+        title: errorMessage[0],
+        content: errorMessage[1]);
+  }
+
   /// * GET
   Future<Response<dynamic>> get(
     String url, {
@@ -44,7 +60,8 @@ class DioClientService {
         onReceiveProgress: onReceiveProgress,
       );
       return response;
-    } on DioException {
+    } on DioException catch (e) {
+      checkException(e);
       rethrow;
     }
   }
@@ -70,7 +87,8 @@ class DioClientService {
         onReceiveProgress: onReceiveProgress,
       );
       return response;
-    } on DioException {
+    } on DioException catch (e) {
+      checkException(e);
       rethrow;
     }
   }
@@ -96,7 +114,8 @@ class DioClientService {
         onReceiveProgress: onReceiveProgress,
       );
       return response;
-    } on DioException {
+    } on DioException catch (e) {
+      checkException(e);
       rethrow;
     }
   }
@@ -122,7 +141,8 @@ class DioClientService {
         onReceiveProgress: onReceiveProgress,
       );
       return response;
-    } on DioException {
+    } on DioException catch (e) {
+      checkException(e);
       rethrow;
     }
   }
@@ -146,7 +166,8 @@ class DioClientService {
         cancelToken: cancelToken,
       );
       return response;
-    } on DioException {
+    } on DioException catch (e) {
+      checkException(e);
       rethrow;
     }
   }

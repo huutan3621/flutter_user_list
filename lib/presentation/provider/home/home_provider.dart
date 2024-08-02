@@ -32,6 +32,7 @@ class HomeProvider extends ChangeNotifier {
 
   Future<void> getAllUser() async {
     final userData = await usecase.getAllUser(page);
+
     if (userData.isNotEmpty) {
       userList = userList + userData;
     } else {
@@ -49,6 +50,9 @@ class HomeProvider extends ChangeNotifier {
 
   Future<void> onRefresh() async {
     page = 1;
+    enableLoadMore = true;
+    userList.clear();
+    notifyListeners();
     await getAllUser();
   }
 }
