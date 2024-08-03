@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_user_list/router.dart';
 
@@ -27,7 +27,7 @@ class ConnectionStatusListener {
   Stream get connectionChange => connectionChangeController.stream;
 
   //flutter_connectivity's listener
-  void _connectionChange(List<ConnectivityResult> result) {
+  void _connectionChange(ConnectivityResult result) {
     checkConnection();
   }
 
