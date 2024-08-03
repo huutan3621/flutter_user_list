@@ -1,4 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<manifest xmlns:android="...">
+  <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
+</manifest>
+
     <application
         android:label="flutter_user_list"
         android:name="${applicationName}"
