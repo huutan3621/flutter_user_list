@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_user_list/connectivity.dart';
+import 'package:flutter_user_list/core/network/connectivity.dart';
+import 'package:flutter_user_list/core/theme/app_color.dart';
 import 'package:flutter_user_list/data/repositories/user_repository_impl.dart';
 import 'package:flutter_user_list/domain/repositories/user/user_repository.dart';
 import 'package:flutter_user_list/domain/usecases/user/user_usecase.dart';
@@ -12,11 +13,9 @@ part 'injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  ConnectionStatusSingleton connectionStatus =
-      ConnectionStatusSingleton.getInstance();
-  connectionStatus.initialize();
   await dotenv.load(fileName: ".env");
   await init();
+  initNoInternetListener();
   runApp(const MyApp());
 }
 
@@ -28,9 +27,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        brightness: Brightness.light,
+        primaryColor: AppColors.light().primary,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: AppColors.dark().primary,
+      ),
+      themeMode: ThemeMode.system,
       onGenerateRoute: AppNavigator.generateRoute,
       initialRoute: RouteNames.splashScreen,
       navigatorKey: AppNavigator.navigatorKey,

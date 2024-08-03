@@ -45,10 +45,11 @@ class _HomeScreenChildState extends State<HomeScreenChild> {
                       itemCount: value.userList.length,
                       itemBuilder: (BuildContext context, int index) {
                         return UserGridItem(
-                          imageUrl: value.userList[index].avatar,
-                          firstName: value.userList[index].firstName,
-                          lastName: value.userList[index].lastName,
-                          email: value.userList[index].email,
+                          user: value.userList[index],
+                          onFavoriteToggle: () {
+                            value.toggleFavorite(value.userList[index]);
+                            setState(() {});
+                          },
                         );
                       },
                       enableLoadMore: value.enableLoadMore,

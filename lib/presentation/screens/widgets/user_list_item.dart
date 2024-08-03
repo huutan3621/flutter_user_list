@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_user_list/core/theme/app_color.dart';
 import 'package:flutter_user_list/domain/entities/user/user_entity.dart';
 
 class UserListItem extends StatelessWidget {
@@ -18,9 +19,9 @@ class UserListItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       margin: const EdgeInsets.symmetric(vertical: 8),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
-        color: Colors.amberAccent,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        color: Theme.of(context).primaryColor,
       ),
       child: Row(
         children: [
@@ -44,16 +45,22 @@ class UserListItem extends StatelessWidget {
               children: [
                 Text(
                   "${user.firstName} ${user.lastName}",
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     overflow: TextOverflow.ellipsis,
+                    color: (Theme.of(context) == Brightness.dark)
+                        ? AppColors.dark().text
+                        : AppColors.light().text,
                   ),
                 ),
                 Text(
                   user.email,
-                  style: const TextStyle(
+                  style: TextStyle(
                     overflow: TextOverflow.ellipsis,
+                    color: (Theme.of(context) == Brightness.dark)
+                        ? AppColors.dark().text
+                        : AppColors.light().text,
                   ),
                 ),
               ],
@@ -62,7 +69,13 @@ class UserListItem extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.favorite,
-              color: user.isFavorite ? Colors.red : Colors.grey,
+              color: user.isFavorite
+                  ? (Theme.of(context) == Brightness.dark)
+                      ? AppColors.dark().heartEnable
+                      : AppColors.light().heartEnable
+                  : (Theme.of(context) == Brightness.dark)
+                      ? AppColors.dark().heartDisable
+                      : AppColors.light().heartDisable,
             ),
             onPressed: () {
               onFavoriteToggle();

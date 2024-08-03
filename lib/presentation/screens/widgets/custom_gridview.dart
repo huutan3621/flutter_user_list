@@ -197,8 +197,8 @@ class _CustomGridViewState extends State<CustomGridView> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 5.0,
-        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
       ),
       scrollDirection: widget.scrollDirection!,
       physics: const NeverScrollableScrollPhysics(),

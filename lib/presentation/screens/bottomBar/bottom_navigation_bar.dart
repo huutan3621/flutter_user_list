@@ -30,6 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTapped,
         currentIndex: _currentIndex,
+        selectedItemColor: Theme.of(context).primaryColor,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -37,7 +38,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Search',
+            label: 'Saved',
           ),
         ],
       ),

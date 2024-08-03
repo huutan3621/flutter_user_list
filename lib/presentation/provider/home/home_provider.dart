@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_user_list/connectivity.dart';
 import 'package:flutter_user_list/core/services/database_services.dart';
 import 'package:flutter_user_list/data/models/response/user/user_model.dart';
 import 'package:flutter_user_list/domain/entities/user/user_entity.dart';
@@ -21,24 +20,9 @@ class HomeProvider extends ChangeNotifier {
 
   late StreamSubscription _connectionChangeStream;
   bool isOffline = false;
-  ConnectionStatusSingleton connectionStatus =
-      ConnectionStatusSingleton.getInstance();
 
   Future<void> init(BuildContext context) async {
     await getAllUser();
-    _connectionChangeStream =
-        connectionStatus.connectionChange.listen(connectionChanged);
-    if (isOffline) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Hello, Snackbar!'),
-        ),
-      );
-    }
-  }
-
-  void connectionChanged(dynamic hasConnection) {
-    isOffline = !hasConnection;
   }
 
   void changeView(bool viewValue) {
