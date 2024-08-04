@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_user_list/core/utils/app_constants.dart';
 import 'package:flutter_user_list/presentation/screens/widgets/custom_button.dart';
 import 'package:flutter_user_list/router.dart';
 
@@ -28,6 +29,13 @@ class SplashScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, RouteNames.bottomBar);
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                AppConstants.appVersion,
+                style: const TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),

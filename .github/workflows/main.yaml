@@ -23,8 +23,8 @@ jobs:
         with:
           channel: "stable"
           architecture: x64
-
       - run: dart run build_runner build --delete-conflicting-outputs
+      - run: echo "APP_VERSION=v1.0.${{ github.run_number }}" >> .env
       - run: flutter build apk --release --split-per-abi
       - run: |
           flutter build ios --no-codesign
@@ -40,5 +40,3 @@ jobs:
           artifacts: "build/app/outputs/apk/release/*,build/ios/iphoneos/app.ipa"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
-# push to master, main, develop
-# pull request on main master
