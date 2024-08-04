@@ -3,11 +3,10 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i3;
 
-import 'package:dio/dio.dart' as _i3;
-import 'package:flutter_user_list/core/services/dio_services.dart' as _i4;
-import 'package:flutter_user_list/presentation/screens/widgets/alert_dialog.dart'
+import 'package:flutter_user_list/domain/entities/user/user_entity.dart' as _i4;
+import 'package:flutter_user_list/domain/repositories/user/user_repository.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -24,244 +23,20 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeCustomCupertinoAlertDialog_0 extends _i1.SmartFake
-    implements _i2.CustomCupertinoAlertDialog {
-  _FakeCustomCupertinoAlertDialog_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeResponse_1<T> extends _i1.SmartFake implements _i3.Response<T> {
-  _FakeResponse_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-/// A class which mocks [DioClientService].
+/// A class which mocks [UserRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDioClientService extends _i1.Mock implements _i4.DioClientService {
-  MockDioClientService() {
+class MockUserRepository extends _i1.Mock implements _i2.UserRepository {
+  MockUserRepository() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.CustomCupertinoAlertDialog get alertDialog => (super.noSuchMethod(
-        Invocation.getter(#alertDialog),
-        returnValue: _FakeCustomCupertinoAlertDialog_0(
-          this,
-          Invocation.getter(#alertDialog),
-        ),
-      ) as _i2.CustomCupertinoAlertDialog);
-
-  @override
-  set alertDialog(_i2.CustomCupertinoAlertDialog? _alertDialog) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #alertDialog,
-          _alertDialog,
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void checkException(_i3.DioException? error) => super.noSuchMethod(
+  _i3.Future<List<_i4.UserEntity>> getAllUser(int? page) => (super.noSuchMethod(
         Invocation.method(
-          #checkException,
-          [error],
+          #getAllUser,
+          [page],
         ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  _i5.Future<_i3.Response<dynamic>> get(
-    String? url, {
-    Map<String, dynamic>? queryParameters,
-    _i3.Options? options,
-    _i3.CancelToken? cancelToken,
-    _i3.ProgressCallback? onReceiveProgress,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #get,
-          [url],
-          {
-            #queryParameters: queryParameters,
-            #options: options,
-            #cancelToken: cancelToken,
-            #onReceiveProgress: onReceiveProgress,
-          },
-        ),
-        returnValue:
-            _i5.Future<_i3.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
-          this,
-          Invocation.method(
-            #get,
-            [url],
-            {
-              #queryParameters: queryParameters,
-              #options: options,
-              #cancelToken: cancelToken,
-              #onReceiveProgress: onReceiveProgress,
-            },
-          ),
-        )),
-      ) as _i5.Future<_i3.Response<dynamic>>);
-
-  @override
-  _i5.Future<_i3.Response<dynamic>> post(
-    String? uri, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    _i3.Options? options,
-    _i3.CancelToken? cancelToken,
-    _i3.ProgressCallback? onSendProgress,
-    _i3.ProgressCallback? onReceiveProgress,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #post,
-          [uri],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #options: options,
-            #cancelToken: cancelToken,
-            #onSendProgress: onSendProgress,
-            #onReceiveProgress: onReceiveProgress,
-          },
-        ),
-        returnValue:
-            _i5.Future<_i3.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
-          this,
-          Invocation.method(
-            #post,
-            [uri],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #options: options,
-              #cancelToken: cancelToken,
-              #onSendProgress: onSendProgress,
-              #onReceiveProgress: onReceiveProgress,
-            },
-          ),
-        )),
-      ) as _i5.Future<_i3.Response<dynamic>>);
-
-  @override
-  _i5.Future<_i3.Response<dynamic>> put(
-    String? uri, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    _i3.Options? options,
-    _i3.CancelToken? cancelToken,
-    _i3.ProgressCallback? onSendProgress,
-    _i3.ProgressCallback? onReceiveProgress,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #put,
-          [uri],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #options: options,
-            #cancelToken: cancelToken,
-            #onSendProgress: onSendProgress,
-            #onReceiveProgress: onReceiveProgress,
-          },
-        ),
-        returnValue:
-            _i5.Future<_i3.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
-          this,
-          Invocation.method(
-            #put,
-            [uri],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #options: options,
-              #cancelToken: cancelToken,
-              #onSendProgress: onSendProgress,
-              #onReceiveProgress: onReceiveProgress,
-            },
-          ),
-        )),
-      ) as _i5.Future<_i3.Response<dynamic>>);
-
-  @override
-  _i5.Future<_i3.Response<dynamic>> patch(
-    String? uri, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    _i3.Options? options,
-    _i3.CancelToken? cancelToken,
-    _i3.ProgressCallback? onSendProgress,
-    _i3.ProgressCallback? onReceiveProgress,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #patch,
-          [uri],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #options: options,
-            #cancelToken: cancelToken,
-            #onSendProgress: onSendProgress,
-            #onReceiveProgress: onReceiveProgress,
-          },
-        ),
-        returnValue:
-            _i5.Future<_i3.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
-          this,
-          Invocation.method(
-            #patch,
-            [uri],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #options: options,
-              #cancelToken: cancelToken,
-              #onSendProgress: onSendProgress,
-              #onReceiveProgress: onReceiveProgress,
-            },
-          ),
-        )),
-      ) as _i5.Future<_i3.Response<dynamic>>);
-
-  @override
-  _i5.Future<dynamic> delete(
-    String? uri, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    _i3.Options? options,
-    _i3.CancelToken? cancelToken,
-    _i3.ProgressCallback? onSendProgress,
-    _i3.ProgressCallback? onReceiveProgress,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #delete,
-          [uri],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #options: options,
-            #cancelToken: cancelToken,
-            #onSendProgress: onSendProgress,
-            #onReceiveProgress: onReceiveProgress,
-          },
-        ),
-        returnValue: _i5.Future<dynamic>.value(),
-      ) as _i5.Future<dynamic>);
+        returnValue: _i3.Future<List<_i4.UserEntity>>.value(<_i4.UserEntity>[]),
+      ) as _i3.Future<List<_i4.UserEntity>>);
 }

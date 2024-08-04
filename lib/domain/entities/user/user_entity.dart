@@ -36,4 +36,9 @@ class UserEntity {
       isFavorite: map['isFavorite'] == 1, // Convert integer to boolean
     );
   }
+
+  @override
+  String toString() {
+    return 'UserEntity(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatar: $avatar, isFavorite: $isFavorite)';
+  }
 }
